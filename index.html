@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tadabbur QS. Al-Baqarah 26-27 - Media Penjelasan Animasi</title>
+  <link rel="stylesheet" href="index.css">
+  <!-- FontAwesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="bg-pattern"></div>
+
+  <header>
+    <div class="brand">
+      <img id="logo-img" class="pens-logo" src="logo.png" alt="Logo PENS" onerror="this.onerror=null; this.src='https://upload.wikimedia.org/wikipedia/commons/e/e4/Logotype_PENS_Surabaya.png';">
+      <div class="brand-text">
+        <h1>Tadabbur Al-Qur'an</h1>
+        <p>Politeknik Elektronika Negeri Surabaya</p>
+      </div>
+    </div>
+    <div class="nav-actions">
+      <button id="studio-toggle-btn" class="btn btn-accent"><i class="fa-solid fa-sliders"></i> Studio Sync</button>
+      <button id="fullscreen-btn" class="btn"><i class="fa-solid fa-expand"></i> Fullscreen</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- LEFT PANEL: Audio, Visualizer & Studio -->
+    <section class="left-panel">
+      <!-- Visualizer Card -->
+      <div class="visualizer-container">
+        <canvas id="visualizer-canvas"></canvas>
+      </div>
+
+      <!-- Audio Player Card -->
+      <div class="audio-player-card">
+        <div class="audio-info">
+          <div class="audio-title">
+            <h3>Audio Penjelasan</h3>
+            <p>Tadabbur QS. Al-Baqarah Ayat 26-27</p>
+          </div>
+          <span class="duration-badge">MP3 Audio</span>
+        </div>
+
+        <audio id="audio-element" src="tadabbur QS Al Baqarah ayat 26-27.mp3" preload="metadata"></audio>
+
+        <div class="controls-row">
+          <button id="play-pause-btn" class="play-btn">
+            <i class="fa-solid fa-play"></i>
+          </button>
+          <div id="progress-container" class="progress-bar-container">
+            <div id="progress-filled" class="progress-filled">
+              <div class="progress-handle"></div>
+            </div>
+          </div>
+          <div id="time-display" class="time-display">00:00 / 00:00</div>
+        </div>
+      </div>
+
+      <!-- Studio Panel -->
+      <div id="studio-panel" class="studio-panel">
+        <div class="studio-header">
+          <h3>Studio Sync (Atur Detik Transisi)</h3>
+          <span id="current-seconds-badge" class="duration-badge">Detik saat ini: 0</span>
+        </div>
+        <div class="studio-table-container">
+          <table class="studio-table">
+            <thead>
+              <tr>
+                <th>Slide ID</th>
+                <th>Judul Slide</th>
+                <th>Detik Transisi</th>
+                <th>Tindakan</th>
+              </tr>
+            </thead>
+            <tbody id="studio-table-body">
+              <!-- Baris akan ditambahkan oleh Javascript -->
+            </tbody>
+          </table>
+        </div>
+        <div class="studio-actions">
+          <button id="save-studio-btn" class="btn btn-primary"><i class="fa-solid fa-floppy-disk"></i> Simpan Konfigurasi</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- RIGHT PANEL: Slide Deck -->
+    <section class="right-panel">
+      <div id="slide-deck" class="slide-deck">
+        <!-- Slide akan dirender secara dinamis oleh JS untuk mendukung transisi -->
+        <div class="slide active">
+          <div class="slide-cover">
+            <div class="badge">Loading Presentasi...</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide-controls">
+        <button id="prev-slide-btn" class="btn"><i class="fa-solid fa-chevron-left"></i> Prev</button>
+        <div id="slide-indicators" class="slide-indicators">
+          <!-- Indikator akan dibuat secara dinamis oleh JS -->
+        </div>
+        <button id="next-slide-btn" class="btn">Next <i class="fa-solid fa-chevron-right"></i></button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Media Pembelajaran Agama Islam &bull; <strong>QS. Al-Baqarah 26-27</strong> &bull; Dosen/Pembicara: <strong>Ustaz Imamul Arifin, L.C., M.HI.</strong></p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
